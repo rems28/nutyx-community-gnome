@@ -1,0 +1,20 @@
+# Depends on: glib libxml2 gobject-introspection gtk3 liboauth libsoup totem-pl-parser vala
+
+description="Framework focused on making media discovery and browsing easy for application developers."
+url="http://www.gnome.org/"
+packager="fanch <fanch@nutyx.com>"
+contributors="fanch at nutyx dot org, tnut at nutyx dot org"
+
+name=grilo
+version=0.3.6
+release=1
+
+source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$version.tar.xz)
+
+build() {
+cd $name-$version
+./configure --prefix=/usr --libdir=/usr/lib --disable-static 
+make
+make DESTDIR=$PKG install
+}
+

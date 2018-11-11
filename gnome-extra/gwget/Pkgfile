@@ -1,0 +1,39 @@
+# Depends on: libglade gtk3 gconf libnotify wget
+
+description="Download manager for GNOME"
+url="https://projects.gnome.org/gwget/"
+packager="fanch <fanch@nutyx.org>"
+contributors="Fanch"
+run=() 
+
+name=gwget
+version=1.0.4
+release=1
+source=(https://download.gnome.org/sources/$name/${version%.*}/$name-$version.tar.bz2 )
+
+
+name=gwget
+version=1.0.4
+release=1
+source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$version.tar.bz2
+        gwget-1.0.4-notify-0.7.patch
+        gwget-1.0.4-glib-2.32.patch
+        drop-libgnomeui.patch
+        gtk3-port.patch
+        wget.patch
+        various-fixes.patch)
+        
+build() {
+cd $name-$version
+patch -Np1 -i ../gwget-1.0.4-notify-0.7.patch
+patch -Np1 -i ../gwget-1.0.4-glib-2.32.patch
+patch -Np1 -i ../drop-libgnomeui.patch
+patch -Np1 -i ../gtk3-port.patch
+patch -Np1 -i ../wget.patch
+patch -Np1 -i ../various-fixes.patch
+autoreconf -fi
+./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var 
+make
+make DESTDIR=$PKG install
+}
+
