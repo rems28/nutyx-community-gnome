@@ -1,0 +1,19 @@
+# Depends on: zlib openssl libssh2 curl cmake python
+
+description="A linkable library for Git"
+url="https://libgit2.github.com/"
+packager="rems <rems@nutyx.com>"
+contributors=""
+
+name=libgit2
+version=0.27.7
+
+source=(https://github.com/$name/$name/archive/v${version}.tar.gz)
+
+build() {
+cd $name-$version
+cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DTHREADSAFE=ON
+
+make
+make DESTDIR=$PKG install
+}
