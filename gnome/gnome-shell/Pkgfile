@@ -1,4 +1,4 @@
-# Depends on: sassc caribou evolution-data-server gjs gnome-control-center gnome-themes-standard libcroco mutter startup-notification gnome-bluetooth gstreamer-plugins-base network-manager-applet gtk-doc adwaita-icon-theme dconf gnome-backgrounds gnome-menus gnome-themes-standard telepathy-mission-control
+# Depends on: sassc caribou evolution-data-server gjs gnome-control-center gnome-themes-extra libcroco mutter startup-notification gnome-bluetooth gstreamer-plugins-base network-manager-applet gtk-doc adwaita-icon-theme dconf gnome-backgrounds gnome-menus telepathy-mission-control
 
 description="provides the core user interface functions for the GNOME 3 Desktop"
 url="http://www.gnome.org/"
