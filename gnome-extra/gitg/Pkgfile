@@ -1,4 +1,4 @@
-# Depends on: gtkspell3 gtk3 gtksourceview meson libgee libgit2-glib libpeas libsecret libsoup vala 
+# Depends on: gtkspell gtk3 gtksourceview meson libgee libgit2-glib libpeas libsecret libsoup vala 
 
 description="GNOME GUI client to view git repositories"
 url="http://www.gnome.org/"
